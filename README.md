@@ -12,14 +12,14 @@
 
 Для настройки сервиса используются переменные окружения:
 
-| Название                            | Описание                                | По умолчанию                            |
-| ----------------------------------- | --------------------------------------- | --------------------------------------- |
-| `STORAGE__URL`                      | Адрес KV-хранилища (Redis)              | `redis://localhost:6379/0`              |
-| `MESSAGING__BROKER_URL`             | Адрес брокера сообщений (Redis)         | `redis://localhost:6379/0`              |
-| `MESSAGING__SEND__PREFIX`           | Префикс очереди отправки сообщений      | `messages:send:`                        |
-| `MESSAGING__RECEIVE__NAME`          | Имя очереди получения сообщений         | `messages:received`                     |
-| `NOTIFICATIONS__DEDUPLICATION__TTL` | Время до повторной отправки уведомления | `300`                                   |
-| `NOTIFICATIONS__TTL`                | Время до удаления уведомления           | `3 * NOTIFICATIONS__DEDUPLICATION__TTL` |
+| Название                   | Описание                           | По умолчанию               |
+| -------------------------- | ---------------------------------- | -------------------------- |
+| `STORAGE__URL`             | Адрес KV-хранилища (Redis)         | `redis://localhost:6379/0` |
+| `STORAGE__PREFIX`          | Префикс KV-хранилища               | `notifications:`           |
+| `STORAGE__TTL`             | Время до удаления уведомления      | `300`                      |
+| `MESSAGING__BROKER_URL`    | Адрес брокера сообщений (Redis)    | `redis://localhost:6379/0` |
+| `MESSAGING__SEND__PREFIX`  | Префикс очереди отправки сообщений | `messages:send:`           |
+| `MESSAGING__RECEIVE__NAME` | Имя очереди получения сообщений    | `messages:received`        |
 
 ## Сущности
 
