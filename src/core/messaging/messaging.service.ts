@@ -36,9 +36,13 @@ export class MessagingService implements OnModuleInit, OnModuleDestroy {
   async onModuleInit() {
     await this.client.start();
 
-    this.stopFn = await this.client.subscribe(this.config.receiveName, async (queue: string, message: messaging.MessageReceived) => {
-      this.eventEmitter.emit(EVENT_MESSAGE_RECEIVED, message);
-    });
+    this.stopFn = await this.client.subscribe(
+      this.config.receiveName,
+      async (_: string, message: messaging.MessageReceived) => {
+        this.eventEmitter.emit(EVENT_MESSAGE_RECEIVED, message);
+      },
+      { waitTime: 0.1, interval: 1.0 }
+    );
   }
 
   async onModuleDestroy() {
