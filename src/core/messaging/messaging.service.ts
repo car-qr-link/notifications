@@ -30,6 +30,7 @@ export class MessagingService implements OnModuleInit, OnModuleDestroy {
       channel: channel,
       message: content,
       to: address,
+      isNotification: true,
     });
   }
 

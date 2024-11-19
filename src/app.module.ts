@@ -3,8 +3,6 @@ import { ConfigModule as NestConfigModule } from '@nestjs/config';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { LoggerModule } from 'nestjs-pino';
 import { ApiModule } from './api/api.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 import { CoreModule } from './core/core.module';
 
@@ -26,7 +24,5 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     ConfigModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule { }
