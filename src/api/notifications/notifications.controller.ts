@@ -14,8 +14,12 @@ export class NotificationsController {
     async sendNotification(
         @Body() request: notification.SendNotificationRequest
     ): Promise<notification.SendNotificationResponse> {
+        const notification = await this.notificationsService.notify(request.account, request.notification);
 
-        throw new NotImplementedException();
+        return {
+            notification: notification.notificaiton,
+            answer: notification.answer,
+        };
     }
 
     @Get('reasons')

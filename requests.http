@@ -8,5 +8,18 @@ POST {{baseUrl}}/notifications HTTP/1.1
 Content-Type: application/json
 
 {
-    
+    "account": {
+        "id": "1",
+        "contacts": [
+            {
+                "channel": "telegram",
+                "address": "{{$dotenv CONTACTS__TELEGRAM}}"
+            },
+            {
+                "channel": "phone",
+                "address": "{{$dotenv CONTACTS__PHONE}}"
+            }
+        ]
+    },
+    "notification": {}
 }
