@@ -1,0 +1,22 @@
+services:
+  app:
+    image: ghcr.io/car-qr-link/notifications:latest
+    container_name: notifications
+    networks:
+      - internal
+    environment:
+      - NODE_ENV=production
+      - STORAGE__URL=${STORAGE_URL}
+      - MESSAGING__BROKER_URL=${MESSAGING_BROKER_URL}
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+
+networks:
+  internal:
+    external: true
+  public:
+    external: true
