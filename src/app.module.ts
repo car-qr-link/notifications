@@ -25,4 +25,4 @@ import { CoreModule } from './core/core.module';
     ConfigModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

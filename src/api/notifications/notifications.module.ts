@@ -4,6 +4,6 @@ import { NotificationsModule as CoreNotificationsModule } from 'src/core/notific
 
 @Module({
   imports: [CoreNotificationsModule],
-  controllers: [NotificationsController]
+  controllers: [NotificationsController],
 })
-export class NotificationsModule { }
+export class NotificationsModule {}

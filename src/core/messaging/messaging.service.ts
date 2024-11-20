@@ -1,12 +1,17 @@
 import { messaging, NotificationChannel } from '@car-qr-link/apis';
-import { Injectable, Logger, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import {
+  Injectable,
+  Logger,
+  OnModuleDestroy,
+  OnModuleInit,
+} from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { MessagingConfig } from 'src/config/messaging.config';
 import { EVENT_MESSAGE_RECEIVED } from './messaging.events';
 
 @Injectable()
 export class MessagingService implements OnModuleInit, OnModuleDestroy {
-  private readonly logger = new Logger(MessagingService.name)
+  private readonly logger = new Logger(MessagingService.name);
   private readonly client: messaging.Client;
 
   private stopFn: () => void;
@@ -42,7 +47,7 @@ export class MessagingService implements OnModuleInit, OnModuleDestroy {
       async (_: string, message: messaging.MessageReceived) => {
         this.eventEmitter.emit(EVENT_MESSAGE_RECEIVED, message);
       },
-      { waitTime: 0.1, interval: 1.0 }
+      { waitTime: 0.1, interval: 1.0 },
     );
   }
 
