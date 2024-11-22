@@ -70,7 +70,7 @@ export class StorageService implements OnModuleInit, OnModuleDestroy {
 
     return {
       notification: JSON.parse(notificationKV[FIELD_NOTIFICATION]),
-      answer: JSON.parse(notificationKV[FIELD_ANSWER]),
+      answer: FIELD_ANSWER in notificationKV ? JSON.parse(notificationKV[FIELD_ANSWER]) : undefined,
     };
   }
 
